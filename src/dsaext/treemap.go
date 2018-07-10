@@ -1,5 +1,3 @@
-// Package dsaext provides datastructures and algorithms
-//
 // TreeMap -- balanced binary search tree implementation of a key/value map
 //
 // @version 2018-07-09
@@ -30,14 +28,6 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package dsaext
-
-// Comparison function for comparing keys
-//
-// Implementing functions are expected to return:
-//     < 0    if value1st is less than value2nd
-//     > 0    if value1st is greater than value2nd
-//     0      if value1st and value2nd have equal value
-type compareFn func(value1st, value2nd interface{}) int
 
 type treeNode struct {
 	key     interface{}
