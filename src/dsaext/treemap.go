@@ -293,6 +293,34 @@ func (tree *TreeMap) getWalk(node *treeNode, key interface{}) (*treeNode, bool) 
 	return retNode, retFlag
 }
 
+func (tree *TreeMap) GetFirstKey() (interface{}, bool) {
+	var retKey interface{} = nil
+	var retFlag bool = false
+	node := tree.root
+	if node != nil {
+		for node.less != nil {
+			node = node.less
+		}
+		retKey = node.key
+		retFlag = true
+	}
+	return retKey, retFlag
+}
+
+func (tree *TreeMap) GetLastKey() (interface{}, bool) {
+	var retKey interface{} = nil
+	var retFlag bool = false
+	node := tree.root
+	if node != nil {
+		for node.greater != nil {
+			node = node.greater
+		}
+		retKey = node.key
+		retFlag = true
+	}
+	return retKey, retFlag
+}
+
 func (tree *TreeMap) GetSize() int {
 	return tree.size
 }
